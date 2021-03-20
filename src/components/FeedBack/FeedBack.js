@@ -3,14 +3,12 @@ import axios from "axios";
 import "./FeedBack.css";
 import Aux from "../../Hoc/Auxiliary/Auxiliary";
 class FeedBack extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+ 
+state = {
       issue: "",
       comment: "",
       isSubmit: false,
     };
-  }
 
   handleIssue = (event) => {
     if (event) {
