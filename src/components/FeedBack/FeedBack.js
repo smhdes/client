@@ -7,7 +7,6 @@ class FeedBack extends Component {
 state = {
       issue: "",
       comment: "",
-      isSubmit: false,
     };
 
   handleIssue = (event) => {
@@ -32,18 +31,14 @@ state = {
     axios
       .post("http://localhost:4000/feedbacks/save", { user })
       .then(function(response) {
-        console.log("response:", response);
         return response;
       });
-    this.setState({ isSubmit: true });
+   
     e.preventDefault();
   };
   render() {
     return (
       <Aux>
-        {this.state.isSubmit ? (
-          <h1>Form verileri gödnerildi home sayfasına geçebilirsiniz</h1>
-        ) : null}
         <form onSubmit={this.handleSubmit}>
           <label>
             Issue:
